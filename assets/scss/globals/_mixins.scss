@@ -1,0 +1,18 @@
+@use '../util' as utl;
+
+$breakpoints-up: ("medium": "48em", "large": "69.375em", "xlarge": "90em"); // 768, 1110, 1440
+$breakpoints-down: ("small": "23.375em", "medium": "47.9375em", "large": "69.3125em"); // 374, 767, 1109
+
+// Breakpoints
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}
+

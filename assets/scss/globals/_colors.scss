@@ -1,0 +1,20 @@
+@use '../util/' as utl;
+
+:root {
+  // colors
+  --hue-primary-lite: #666CA3;
+  --hue-primary-dark: #13183F;
+  --hue-neutral: #83869A;
+  --hue-accent-bright: #F74780;
+  --hue-accent-pale: #FFA7C3;
+  --hue-white: #FFFFFF;
+  --grad1: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
+  // --grad1-hover
+  --grad2: linear-gradient(0deg, #4851FF 0%, #f02aa6 100%);
+  // --grad2-hover
+  // fonts
+  --f-heading-xl: #{clamp(utl.rem(40), 1.3571428571428572rem + 2.380952380952381vw, utl.rem(56))}; // lh 51px/70px
+  --f-heading-l: #{clamp(utl.rem(24), 0.9285714285714286rem + 1.1904761904761905vw, utl.rem(32))}; // lh 40px/28px
+  --f-body-m: #{clamp(utl.rem(16), 0.8571428571428572rem + 0.2976190476190476vw, utl.rem(18))}; // lh 28px
+  --f-body-s: #{utl.rem(16)}; // lh 28px
+}

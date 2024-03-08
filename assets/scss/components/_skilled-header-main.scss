@@ -1,0 +1,144 @@
+@use '../util' as utl;
+@import '../globals/mixins';
+
+.skilled-header-main {
+  padding-block-start: utl.rem(16);
+
+  @include breakpoint-up(medium) {
+    & {
+      padding-block-start: utl.rem(24);
+      padding-block-end: utl.rem(100);
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-end: utl.rem(40);
+  }
+
+  &__btn {
+    background-color: var(--hue-primary-dark);
+    color: var(--hue-white);
+    font-weight: 700;
+    font-size: var(--f-body-m);
+
+    &:hover {
+      background-color: var(--hue-primary-lite);
+    }
+  }
+
+  &__btn-cta {
+    background: var(--grad1);
+    color: var(--hue-white);
+    font-weight: 700;
+    font-size: var(--f-body-m);
+    line-height: utl.rem(26);
+    margin-block-end: utl.rem(22);
+    padding-inline: utl.rem(38);
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__hero {
+
+    @include breakpoint-up(medium) {
+      & {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      & {
+        padding-block-start: utl.rem(100);
+      }
+    }
+  }
+
+  &__info {
+
+    @include breakpoint-up(medium) {
+      & {
+        flex: 3;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      & {
+        flex: 1;
+      }
+
+      p {
+        width: 75%;
+      }
+    }
+
+    h1 {
+      color: var(--hue-primary-dark);
+      font-size: var(--f-heading-xl);
+      line-height: normal;
+      font-weight: 800;
+      margin-block-start: 0;
+      margin-block-end: utl.rem(25);
+    }
+
+    p {
+      font-size: var(--f-body-m);
+      font-weight: 500;
+      line-height: utl.rem(26);
+      margin-block-start: 0;
+      margin-block-end: utl.rem(22);
+    }
+  }
+
+  &__banner {
+    background-image: url('img/image-hero-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: utl.rem(409);
+    width: 100%;
+
+    @include breakpoint-up(medium) {
+      & {
+        flex: 2;
+        background-image: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: utl.rem(695);
+        height: utl.rem(723);
+        background-image: url('img/image-hero-tablet.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: top center;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      & {
+        flex: 1;
+      }
+
+      &::after {
+        left: 50%;
+        width: utl.rem(1046);
+        height: utl.rem(838);
+        background-image: url('img/image-hero-desktop.png');
+      }
+    }
+  }
+}
