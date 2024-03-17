@@ -1,0 +1,65 @@
+@use '../util' as utl;
+@use '../globals/mixins' as mixin;
+
+.skilled-main {
+  background: linear-gradient(0deg, #F0F1FF 0%, #FFFFFF 100%);
+  
+  @include mixin.breakpoint-up(medium) {
+    display: grid;
+  }
+
+  h2 {
+    background: var(--grad1);
+    font-size: var(--f-heading-l);
+    line-height: utl.rem(32);
+    color: var(--hue-white);
+    margin: 0 0 utl.rem(16) 0;
+    padding-inline: utl.rem(28);
+    padding-block: utl.rem(24);
+    border-radius: utl.rem(10);
+  }
+
+  &__item {
+    margin: 0 0 utl.rem(16) 0;
+
+    img {
+      width: utl.rem(56);
+      height: utl.rem(56);
+    }
+  }
+  &__item-img {
+    margin-block-end: utl.rem(-32);
+    padding-inline: utl.rem(28);
+  }
+  &__item-text {
+    background-color: var(--hue-white);
+    padding-inline: utl.rem(28);
+    padding-block-start: utl.rem(56);
+    padding-block-end: utl.rem(24);
+    border-radius: utl.rem(10);
+
+    h3, p {
+      margin-block: 0;
+    }
+    h3 {
+      font-size: utl.rem(20);
+      line-height: normal;
+      font-weight: 800;
+      color: var(--hue-primary-dark);
+      padding-block-end: utl.rem(16);
+    }
+    p {
+      font-size: var(--f-body-m);
+      line-height: utl.rem(26);
+      font-weight: 500;
+      padding-block-end: utl.rem(24);
+    }
+  }
+
+  &__link {
+    font-size: utl.rem(18);
+    line-height: utl.rem(28);
+    font-weight: 700;
+  }
+} 
+
