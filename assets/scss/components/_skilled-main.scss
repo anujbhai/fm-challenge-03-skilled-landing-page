@@ -3,13 +3,25 @@
 
 .skilled-main {
   background: linear-gradient(0deg, #F0F1FF 0%, #FFFFFF 100%);
-  
-  @include mixin.breakpoint-up(medium) {
-    display: grid;
+
+  .container {
+    padding-block-end: utl.rem(64);
+
+    @include mixin.breakpoint-up(medium) {
+      display: grid;
+      grid-gap: utl.rem(10);
+      grid-template-columns: repeat(auto-fit, minmax(utl.rem(240), 2fr));
+      padding-block-end: utl.rem(140);
+    }
+
+    @include mixin.breakpoint-up(large) {
+      grid-gap: utl.rem(30);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+    }
   }
 
   h2 {
-    background: var(--grad1);
     font-size: var(--f-heading-l);
     line-height: utl.rem(32);
     color: var(--hue-white);
@@ -17,6 +29,21 @@
     padding-inline: utl.rem(28);
     padding-block: utl.rem(24);
     border-radius: utl.rem(10);
+    background: var(--grad1);
+
+    @include mixin.breakpoint-up(medium) {
+      margin-block-start: utl.rem(24);
+      padding-block-start: utl.rem(56);
+    }
+
+    @include mixin.breakpoint-up(large) {
+      line-height: utl.rem(40);
+      border-radius: utl.rem(15);
+    }
+  }
+
+  &__title {
+    display: flex;
   }
 
   &__item {
@@ -25,6 +52,9 @@
     img {
       width: utl.rem(56);
       height: utl.rem(56);
+    }
+
+    &:last-child {
     }
   }
   &__item-img {
@@ -38,6 +68,12 @@
     padding-block-end: utl.rem(24);
     border-radius: utl.rem(10);
 
+    @include mixin.breakpoint-up(large) {
+      box-shadow: 0 utl.rem(25) utl.rem(50) rgba(6, 22, 141, 0.04);
+      padding-block-end: utl.rem(40);
+      border-radius: utl.rem(15);
+    }
+
     h3, p {
       margin-block: 0;
     }
@@ -47,12 +83,22 @@
       font-weight: 800;
       color: var(--hue-primary-dark);
       padding-block-end: utl.rem(16);
+
+      @include mixin.breakpoint-up(large) {
+        font-size: utl.rem(24);
+        padding-block-end: utl.rem(24);
+      }
     }
     p {
       font-size: var(--f-body-m);
       line-height: utl.rem(26);
       font-weight: 500;
       padding-block-end: utl.rem(24);
+
+      @include mixin.breakpoint-up(large) {
+        min-height: utl.rem(128);
+        line-height: utl.rem(28);
+      }
     }
   }
 
