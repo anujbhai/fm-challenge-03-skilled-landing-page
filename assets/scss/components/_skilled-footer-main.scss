@@ -1,5 +1,27 @@
 @use '../util' as utl;
+@use '../globals/mixins' as mixin;
 
 .skilled-footer-main {
   background-color: var(--hue-primary-dark);
+  padding-block: utl.rem(36);
+
+  @include mixin.breakpoint-up(large) {
+    padding-block: utl.rem(32);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__cta {
+    background: var(--grad2);
+    color: var(--hue-white);
+    font-size: var(--f-body-m);
+    font-weight: 700;
+    line-height: utl.rem(28);
+  }
 }
